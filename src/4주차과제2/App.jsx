@@ -1,4 +1,4 @@
-import Restaurants from './restaurants';
+import Restaurants from './Restaurants';
 
 export default function App() {
   return (
