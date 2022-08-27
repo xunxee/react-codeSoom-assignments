@@ -3,16 +3,19 @@ import reducer from './reducer';
 import {
   setRestaurants,
 } from './actions';
+
 import restaurants from '../../fixtures/restaurants';
 
 describe('reducer', () => {
   describe('setRestaurants', () => {
-    const initialState = {
-      restaurants: [],
-    };
+    it('changes restaurants array', () => {
+      const initialState = {
+        restaurants: [],
+      };
 
-    const state = reducer(initialState, setRestaurants(restaurants));
+      const state = reducer(initialState, setRestaurants(restaurants));
 
-    expect(state).not.toHaveLength(0);
+      expect(state.restaurants).not.toHaveLength(0);
+    });
   });
 });
