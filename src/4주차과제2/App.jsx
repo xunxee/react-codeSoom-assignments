@@ -1,15 +1,24 @@
-import Restaurants from './Restaurants';
+import { useEffect } from 'react';
+
+import { useDispatch } from 'react-redux';
+
+import RestaurantsContainer from './RestaurantsContainer';
+
+import {
+  setRestaurants,
+} from './actions';
 
 export default function App() {
-  const restaurants = [
-    {
-      id: 1, name: '김밥제국', category: '분식', address: '서울시 강남구',
-    },
-  ];
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setRestaurants(restaurants));
+  }, []);
+
   return (
     <div>
       <h1>Restaurants</h1>
-      <Restaurants restaurants={restaurants} />
+      <RestaurantsContainer />
     </div>
   );
 }
