@@ -47,6 +47,7 @@ describe('reducer', () => {
   describe('addRestaurant', () => {
     it('append restaurant into restaurants and clear restaurant form', () => {
       const initialState = {
+        newId: 101,
         restaurants: [],
         restaurant: {
           name: '마법사주방',
@@ -58,7 +59,9 @@ describe('reducer', () => {
       const state = reducer(initialState, addRestaurant());
 
       expect(state.restaurants).toHaveLength(1);
+      expect(state.restaurants[0].id).toBe(101);
       expect(state.restaurant.name).toBe('');
+      expect(state.newId).toBe(102);
     });
   });
 });
