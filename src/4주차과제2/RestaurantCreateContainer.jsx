@@ -1,9 +1,9 @@
+import RestaurantForm from './RestaurantForm';
+
 export default function RestaurantCreateContainer() {
   return (
     <div>
-      <button type="button">
-        등록
-      </button>
+      <RestaurantForm />
     </div>
   );
 }
