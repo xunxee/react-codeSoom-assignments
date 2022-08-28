@@ -34,7 +34,7 @@ test('RestaurantCreateContainer', () => {
     target: { value: '서울시 강남구 역삼동' },
   });
 
-  // 여기는 컨테이너니깐 리덕스와 연결하는게 관심있음
+  // 여기는 컨테이너니깐 리덕스와 연결하는 것이 관심있음
   expect(dispatch).toBeCalledWith({
     type: 'changeRestaurantFiled',
     payload: {
