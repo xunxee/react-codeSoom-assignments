@@ -30,6 +30,19 @@ test('RestaurantCreateContainer', () => {
   expect(getByDisplayValue('서울시')).not.toBeNull();
   expect(getByText('등록')).not.toBeNull();
 
+  fireEvent.change(getByDisplayValue('서울시'), {
+    target: { value: '서울시 강남구 역삼동' },
+  });
+
+  // 여기는 컨테이너니깐 리덕스와 연결하는게 관심있음
+  expect(dispatch).toBeCalledWith({
+    type: 'changeRestaurantFiled',
+    payload: {
+      name: 'address',
+      value: '서울시 강남구 역삼동',
+    },
+  });
+
   fireEvent.click(getByText('등록'));
 
   expect(dispatch).toBeCalledWith({

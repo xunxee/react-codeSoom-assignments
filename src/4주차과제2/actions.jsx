@@ -1,4 +1,14 @@
 // action creator
+export function changeRestaurantFiled({ name, value }) {
+  return {
+    type: 'changeRestaurantFiled',
+    payload: {
+      name,
+      value,
+    },
+  };
+}
+
 export function setRestaurants(restaurants) {
   return {
     type: 'setRestaurants',
