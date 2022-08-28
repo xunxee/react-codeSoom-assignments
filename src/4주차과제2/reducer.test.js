@@ -59,8 +59,13 @@ describe('reducer', () => {
       const state = reducer(initialState, addRestaurant());
 
       expect(state.restaurants).toHaveLength(1);
-      expect(state.restaurants[0].id).toBe(101);
+
+      const restaurant = state.restaurants[state.restaurants.length - 1];
+      expect(restaurant.id).toBe(101);
+      expect(restaurant.name).toBe('마법사주방');
+
       expect(state.restaurant.name).toBe('');
+
       expect(state.newId).toBe(102);
     });
   });
