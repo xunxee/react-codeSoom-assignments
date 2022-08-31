@@ -13,6 +13,8 @@ import {
 
 function loadCategories({ dispatch }) {
   const categories = [];
+  // TODO: fetch GET / categories
+  // REST - CRUD => Read - collection / member, element
   dispatch(setCategories(categories));
 }
 
