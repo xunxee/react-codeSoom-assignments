@@ -7,31 +7,16 @@ import RestaurantsContainer from './RestaurantsContainer';
 import RestaurantCreateContainer from './RestaurantCreateContainer';
 
 import {
-  setRestaurants,
-  setCategories,
+  loadRestaurants,
+  loadCategories,
 } from './actions';
-
-import { fetchCategories } from './services/api';
-
-async function loadCategories({ dispatch }) {
-  const categories = await fetchCategories();
-  dispatch(setCategories(categories));
-}
-
-function loadRestaurants({ dispatch }) {
-  const restaurants = [];
-  // TODO: load restaurants from API server.
-  // 1. API server 확보
-  // 2. fetch
-  dispatch(setRestaurants(restaurants));
-}
 
 export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    loadCategories({ dispatch });
-    loadRestaurants({ dispatch });
+    dispatch(loadCategories());
+    dispatch(loadRestaurants());
   }, []);
 
   return (

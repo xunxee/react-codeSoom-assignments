@@ -24,10 +24,7 @@ test('App', () => {
     <App />
   ));
 
-  expect(dispatch).toBeCalledWith({
-    type: 'setRestaurants',
-    payload: { restaurants: [] },
-  });
+  expect(dispatch).toBeCalledTimes(2);
 
   expect(queryByText(/김밥제국/)).toBeNull();
 });
