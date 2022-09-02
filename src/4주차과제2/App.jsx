@@ -11,10 +11,10 @@ import {
   setCategories,
 } from './actions';
 
-function loadCategories({ dispatch }) {
-  const categories = [];
-  // TODO: fetch GET / categories
-  // REST - CRUD => Read - collection / member, element
+import { fetchCategories } from './services/api';
+
+async function loadCategories({ dispatch }) {
+  const categories = await fetchCategories();
   dispatch(setCategories(categories));
 }
 

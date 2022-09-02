@@ -7,6 +7,7 @@ import { render } from '@testing-library/react';
 import App from './App';
 
 jest.mock('react-redux');
+jest.mock('./services/api');
 
 test('App', () => {
   const dispatch = jest.fn();
@@ -16,7 +17,7 @@ test('App', () => {
   useSelector.mockImplementation((selector) => selector({
     restaurants: [],
     restaurant: {},
-    categories: [],
+    categories: [], // 이거 안하면 Categories 컴포넌트에서 에러 발생
   }));
 
   const { queryByText } = render((

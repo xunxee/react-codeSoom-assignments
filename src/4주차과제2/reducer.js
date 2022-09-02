@@ -8,6 +8,7 @@ const initialState = {
   newId: 100,
   restaurants: [],
   restaurant: initialRestaurant,
+  categories: [],
 };
 
 export default function reducer(state = initialState, action) {
