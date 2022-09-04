@@ -8,6 +8,7 @@ const initialState = {
   newId: 100,
   restaurants: [],
   restaurant: initialRestaurant,
+  categories: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -38,6 +39,15 @@ export default function reducer(state = initialState, action) {
       newId: newId + 1,
       restaurants: [...restaurants, { ...restaurant, id: newId }],
       restaurant: initialRestaurant,
+    };
+  }
+
+  if (action.type === 'setCategories') {
+    const { categories } = action.payload;
+
+    return {
+      ...state,
+      categories,
     };
   }
 

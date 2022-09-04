@@ -4,6 +4,7 @@ import {
   setRestaurants,
   changeRestaurantFiled,
   addRestaurant,
+  setCategories,
 } from './actions';
 
 import restaurants from '../../fixtures/restaurants';
@@ -15,7 +16,10 @@ describe('reducer', () => {
         restaurants: [],
       };
 
-      const state = reducer(initialState, setRestaurants(restaurants));
+      const state = reducer(
+        initialState,
+        setRestaurants(restaurants),
+      );
 
       expect(state.restaurants).not.toHaveLength(0);
     });
@@ -67,6 +71,22 @@ describe('reducer', () => {
       expect(state.restaurant.name).toBe('');
 
       expect(state.newId).toBe(102);
+    });
+  });
+
+  describe('setCategories', () => {
+    it('changes categories', () => {
+      const categories = [
+        { id: 1, name: '한식' },
+      ];
+
+      const initialState = {
+        categories: [],
+      };
+
+      const state = reducer(initialState, setCategories(categories));
+
+      expect(state.categories).toHaveLength(1);
     });
   });
 });
