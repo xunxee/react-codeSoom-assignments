@@ -15,7 +15,6 @@ test('RestaurantForm', () => {
   const handleClick = jest.fn();
 
   const { getByText, getByDisplayValue } = render((
-
     <RestaurantForm
       restaurant={restaurant}
       onChange={handleChange}
