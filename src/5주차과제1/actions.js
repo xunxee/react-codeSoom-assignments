@@ -24,6 +24,13 @@ export function selectRegion(regionId) {
   };
 }
 
+export function selectCategory(categoryId) {
+  return {
+    type: 'selectCategory',
+    payload: { categoryId },
+  };
+}
+
 export function loadInitialData() {
   return async (dispatch) => {
     const regions = await fetchRegions();
@@ -32,9 +39,4 @@ export function loadInitialData() {
     const categories = await fetchCategories();
     dispatch(setCategories(categories));
   };
-}
-
-// TODO: delete this.
-export function xxx() {
-  //
 }
