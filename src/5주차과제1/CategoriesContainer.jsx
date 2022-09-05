@@ -4,13 +4,23 @@ import {
   selectCategory,
 } from './actions';
 
+function get(key) {
+  return (obj) => obj[key];
+}
+
 export default function CategoriesContainer() {
   const dispatch = useDispatch(() => dispatch);
 
-  const { categories, selectedCategory } = useSelector((state) => ({
-    categories: state.categories,
-    selectedCategory: state.selectedCategory,
-  }));
+  const categories = useSelector(get('categories'));
+  const selectedCategory = useSelector((state) => state.selectedCategory);
+
+  // const categories = useSelector((state) => state.categories);
+  // const selectedCategory = useSelector((state) => state.selectedCategory);
+
+  // const { categories, selectedCategory } = useSelector((state) => ({
+  //   categories: state.categories,
+  //   selectedCategory: state.selectedCategory,
+  // }));
 
   function handleClick(categoryId) {
     dispatch(selectCategory(categoryId));
