@@ -1,13 +1,11 @@
+import { equal } from './utils';
+
 const initialState = {
   regions: [],
   categories: [],
   selectedRegion: null,
   selectedCategory: null,
 };
-
-function equal(key, value) {
-  return (obj) => obj[key] === value;
-}
 
 const reducers = {
   setRegions(state, { payload: { regions } }) {
