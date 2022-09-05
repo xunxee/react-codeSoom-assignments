@@ -7,7 +7,10 @@ import {
 export default function RegionsContainer() {
   const dispatch = useDispatch(() => dispatch);
 
-  const regions = useSelector((state) => state.regions);
+  const { regions, selectedRegion } = useSelector((state) => ({
+    regions: state.regions,
+    selectedRegion: state.selectedRegion,
+  }));
 
   function handleClick(regionId) {
     // TODO
@@ -23,6 +26,7 @@ export default function RegionsContainer() {
             onClick={() => handleClick(region.id)}
           >
             {region.name}
+            {selectedRegion && region.id === selectedRegion.id ? '(V)' : null}
           </button>
         </li>
       ))}
