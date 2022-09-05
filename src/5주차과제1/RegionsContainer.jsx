@@ -1,10 +1,17 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import {
+  selectRegion,
+} from './actions';
 
 export default function RegionsContainer() {
+  const dispatch = useDispatch(() => dispatch);
+
   const regions = useSelector((state) => state.regions);
 
-  function handleClick() {
+  function handleClick(regionId) {
     // TODO
+    dispatch(selectRegion(regionId));
   }
 
   return (
@@ -13,7 +20,7 @@ export default function RegionsContainer() {
         <li key={region.id}>
           <button
             type="button"
-            onClick={handleClick}
+            onClick={() => handleClick(region.id)}
           >
             {region.name}
           </button>
