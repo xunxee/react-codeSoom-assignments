@@ -5,6 +5,10 @@ const initialState = {
   selectedCategory: null,
 };
 
+function equal(key, value) {
+  return (obj) => obj[key] === value;
+}
+
 const reducers = {
   setRegions(state, { payload: { regions } }) {
     return {
@@ -21,16 +25,18 @@ const reducers = {
   },
 
   selectRegion(state, { payload: { regionId } }) {
+    const { regions } = state;
     return {
       ...state,
-      selectedRegion: state.regions.find((region) => region.id === regionId),
+      selectedRegion: regions.find(equal('id', regionId)),
     };
   },
 
   selectCategory(state, { payload: { categoryId } }) {
+    const { categories } = state;
     return {
       ...state,
-      selectedCategory: state.categories.find((category) => category.id === categoryId),
+      selectedCategory: categories.find(equal('id', categoryId)),
     };
   },
 };
