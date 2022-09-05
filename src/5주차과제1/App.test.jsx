@@ -13,5 +13,6 @@ test('App', () => {
     <App />
   ));
 
+  expect(dispatch).toBeCalled();
   // expect(queryByText('Hello')).toBeNull();
 });
