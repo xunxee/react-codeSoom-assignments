@@ -1,12 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  selectCategory,
-} from './actions';
+import { selectCategory } from './actions';
 
-import {
-  get,
-} from './utils';
+import { get } from './utils';
 
 export default function CategoriesContainer() {
   const dispatch = useDispatch(() => dispatch);
