@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import RegionsContainer from './RegionsContainer';
 import CategoriesContainer from './CategoriesContainer';
+import RestaurantsContainer from './RestaurantsContainer';
 
 import {
   loadInitialData,
@@ -13,10 +14,6 @@ import {
 // 1. 지역 선택 - Regions <- API
 // 2. 분류 선택 - Category <- API
 // 3. 식당 목록 - Restaurants <- API (with region, category)
-
-function RestaurantsContainer() {
-  return null;
-}
 
 export default function App() {
   const dispatch = useDispatch();
