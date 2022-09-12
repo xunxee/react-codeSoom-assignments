@@ -1,7 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectRegion } from './actions';
-
 import { get } from './utils';
 
 export default function RestaurantsContainer() {
