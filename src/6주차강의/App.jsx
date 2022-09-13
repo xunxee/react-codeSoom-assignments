@@ -1,11 +1,6 @@
 import HomePage from './HomePage';
+import AboutPage from './AboutPage';
 import RestaurantsPage from './RestaurantsPage';
-
-function AboutPage() {
-  return (
-    <p>About...</p>
-  );
-}
 
 function NotFoundPage() {
   return (
