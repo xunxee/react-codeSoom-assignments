@@ -1,12 +1,7 @@
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
+import NotFoundPage from './NotFoundPage';
 import RestaurantsPage from './RestaurantsPage';
-
-function NotFoundPage() {
-  return (
-    <p>NotFoundPage</p>
-  );
-}
 
 export default function App() {
   const { location: { pathname } } = window;
