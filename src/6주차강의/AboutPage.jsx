@@ -1,5 +1,7 @@
 export default function AboutPage() {
   return (
-    <p>About...</p>
+    <div>
+      <h1>이 서비스에 대해서...</h1>
+    </div>
   );
 }
