@@ -14,7 +14,7 @@ export default function RestaurantsPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadInitialData(dispatch));
+    dispatch(loadInitialData());
   }, []);
 
   return (
