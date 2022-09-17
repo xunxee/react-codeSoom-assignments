@@ -6,7 +6,7 @@ import {
 
 import { Provider } from 'react-redux';
 
-import App from './6주차강의/App';
+import App from './6주차과제/App';
 
 // import App from './2주차/assignment1(creatingCounterApp)/App';
 // import App from './2주차/assignment2(creatingTodoApp)/App';

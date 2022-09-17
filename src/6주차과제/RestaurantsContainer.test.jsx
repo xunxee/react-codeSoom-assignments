@@ -17,10 +17,10 @@ test('RestaurantsContainer', () => {
     ],
   }));
 
+  const handleClick = jest.fn();
+
   const { container } = render((
-    <MemoryRouter>
-      <RestaurantsContainer />
-    </MemoryRouter>
+    <RestaurantsContainer onClickRestaurant={handleClick} />
   ));
 
   expect(container).toHaveTextContent('마법사주방');

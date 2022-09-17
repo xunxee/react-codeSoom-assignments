@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { useDispatch } from 'react-redux';
 
 import RegionsContainer from './RegionsContainer';
@@ -17,11 +19,16 @@ export default function RestaurantsPage() {
     dispatch(loadInitialData());
   }, []);
 
+  function handleClickRestaurants(restaurant) {
+    // TODO: 이동?
+    console.log(restaurant);
+  }
+
   return (
     <div>
       <RegionsContainer />
       <CategoriesContainer />
-      <RestaurantsContainer />
+      <RestaurantsContainer onClickRestaurant={handleClickRestaurants} />
     </div>
   );
 }
