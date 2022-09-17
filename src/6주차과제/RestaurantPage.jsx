@@ -1,15 +1,33 @@
+import { useEffect } from 'react';
+
 import { useParams } from 'react-router-dom';
 
-import { fetchRestaurant } from './services/api';
+import { useDispatch } from 'react-redux';
 
-export default function RestaurantPage({ params }) {
-  const { id } = params || useParams();
+import {
+  loadRestaurant,
+} from './actions';
+
+function RestaurantContainer({ restaurantId }) {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadRestaurant({ restaurantId }));
+  }, []);
 
   return (
     <div>
       레스토랑
       {' '}
-      {id}
+      {restaurantId}
     </div>
+  );
+}
+
+export default function RestaurantPage({ params }) {
+  const { id } = params || useParams();
+
+  return (
+    <RestaurantContainer restaurantId={id} />
   );
 }
