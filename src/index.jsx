@@ -14,8 +14,9 @@ import App from './6주차강의/App';
 // import store from './4주차강의/store';
 // import store from './4주차과제2/store';
 // import store from './5주차과제1/store';
+// import store from './6주차강의/store';
 
-import store from './6주차강의/store';
+import store from './6주차과제/store';
 
 const app = ReactDOM.createRoot(document.getElementById('app'));
 app.render(
