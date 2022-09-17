@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 
@@ -13,6 +13,8 @@ import {
 } from './actions';
 
 export default function RestaurantsPage() {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,7 +23,8 @@ export default function RestaurantsPage() {
 
   function handleClickRestaurants(restaurant) {
     // TODO: 이동?
-    console.log(restaurant);
+    const url = `/restaurants/${restaurant.id}`;
+    navigate(url);
   }
 
   return (
