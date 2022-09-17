@@ -1,3 +1,5 @@
+import { MemoryRouter } from 'react-router-dom';
+
 import { render } from '@testing-library/react';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,7 +18,9 @@ test('RestaurantsContainer', () => {
   }));
 
   const { container } = render((
-    <RestaurantsContainer />
+    <MemoryRouter>
+      <RestaurantsContainer />
+    </MemoryRouter>
   ));
 
   expect(container).toHaveTextContent('마법사주방');

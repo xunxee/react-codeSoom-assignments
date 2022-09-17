@@ -1,3 +1,5 @@
+import { MemoryRouter } from 'react-router-dom';
+
 import { render } from '@testing-library/react';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,10 +27,16 @@ describe('RestaurantsPage', () => {
     }));
   });
 
-  it('renders region and category select buttons', () => {
-    const { queryByText } = render((
-      <RestaurantsPage />
+  function renderRestaurantsPage() {
+    return render((
+      <MemoryRouter>
+        <RestaurantsPage />
+      </MemoryRouter>
     ));
+  }
+
+  it('renders region and category select buttons', () => {
+    const { queryByText } = renderRestaurantsPage();
 
     expect(dispatch).toBeCalled();
 
@@ -37,9 +45,7 @@ describe('RestaurantsPage', () => {
   });
 
   it('renders links of restaurants', () => {
-    const { container } = render((
-      <RestaurantsPage />
-    ));
+    const { container } = renderRestaurantsPage();
 
     expect(container.innerHTML).toContain('<a href=');
   });
