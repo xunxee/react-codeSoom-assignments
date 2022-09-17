@@ -1,21 +1,15 @@
-import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-import { useNavigate } from 'react-router-dom';
+import { fetchRestaurant } from './services/api';
 
-import { useDispatch } from 'react-redux';
+export default function RestaurantPage({ params }) {
+  const { id } = params || useParams();
 
-import RegionsContainer from './RegionsContainer';
-import CategoriesContainer from './CategoriesContainer';
-import RestaurantsContainer from './RestaurantsContainer';
-
-import {
-  loadInitialData,
-} from './actions';
-
-export default function RestaurantPage() {
   return (
     <div>
       레스토랑
+      {' '}
+      {id}
     </div>
   );
 }
