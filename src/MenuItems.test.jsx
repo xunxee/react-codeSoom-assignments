@@ -19,13 +19,19 @@ describe('MenuItems', () => {
 
   context('without menu items', () => {
     it('renders no items message', () => {
-      const menuItems = [];
+      [[], null, undefined].forEach((menuItems) => {
+        const { container } = render(<MenuItems menuItems={menuItems} />);
 
-      const { container } = render(
-        <MenuItems menuItems={menuItems} />,
-      );
+        expect(container).toHaveTextContent('없어요!');
+      });
 
-      expect(container).toHaveTextContent('없어요!');
+      // const menuItems = [];
+
+      // const { container } = render(
+      //   <MenuItems menuItems={menuItems} />,
+      // );
+
+      // expect(container).toHaveTextContent('없어요!');
     });
   });
 });
