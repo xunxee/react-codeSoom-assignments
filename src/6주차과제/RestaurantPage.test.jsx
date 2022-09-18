@@ -17,6 +17,7 @@ describe('RestaurantPage', () => {
       },
     }));
   });
+
   it('renders name', () => {
     const params = { id: '1' };
 

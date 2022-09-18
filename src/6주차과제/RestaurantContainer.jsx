@@ -8,14 +8,7 @@ import {
 
 import { get } from './utils';
 
-function RestaurantDetail({ restaurant }) {
-  return (
-    <div>
-      <p>{restaurant.name}</p>
-      <p>{restaurant.address}</p>
-    </div>
-  );
-}
+import RestaurantDetail from './RestaurantDetail';
 
 export default function RestaurantContainer({ restaurantId }) {
   const dispatch = useDispatch();
@@ -25,6 +18,12 @@ export default function RestaurantContainer({ restaurantId }) {
   }, []);
 
   const restaurant = useSelector(get('restaurant'));
+
+  if (!restaurant) {
+    return (
+      <p>Loading......</p>
+    );
+  }
 
   return (
     <RestaurantDetail restaurant={restaurant} />
