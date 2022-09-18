@@ -14,15 +14,17 @@ describe('RestaurantContainer', () => {
       restaurant: {
         id: 1,
         name: '마법사주방',
+        address: '서울시 강남구',
       },
     }));
   });
 
-  it('renders name', () => {
+  it('renders name add address', () => {
     const { container } = render((
       <RestaurantContainer restaurantId="1" />
     ));
 
     expect(container).toHaveTextContent('마법사주방');
+    expect(container).toHaveTextContent('서울시');
   });
 });

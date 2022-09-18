@@ -11,9 +11,8 @@ import { get } from './utils';
 function RestaurantDetail({ restaurant }) {
   return (
     <div>
-      {restaurant.name}
-      {' '}
-      {restaurant.id}
+      <p>{restaurant.name}</p>
+      <p>{restaurant.address}</p>
     </div>
   );
 }

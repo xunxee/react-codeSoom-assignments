@@ -24,6 +24,6 @@ describe('RestaurantPage', () => {
       <RestaurantPage params={params} />
     ));
 
-    expect(container).toHaveTextContent('마법사주방 1');
+    expect(container).toHaveTextContent('마법사주방');
   });
 });
