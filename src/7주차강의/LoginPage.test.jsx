@@ -14,4 +14,14 @@ describe('LoginPage', () => {
 
     expect(container).toHaveTextContent('Log in');
   });
+
+  it('renders input control', () => {
+    const { getByLabelText } = render(
+      <MemoryRouter>
+        <LoginPage />
+      </MemoryRouter>,
+    );
+
+    expect(getByLabelText('E-mail')).not.toBeNull();
+  });
 });
