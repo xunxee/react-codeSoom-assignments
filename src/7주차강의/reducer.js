@@ -8,6 +8,7 @@ const initialState = {
   selectedRegion: null,
   selectedCategory: null,
   loginFields: {},
+  accessToken: '',
 };
 
 const reducers = {
@@ -64,12 +65,19 @@ const reducers = {
       },
     };
   },
+
+  setAccessToken(state, { payload: { accessToken } }) {
+    return {
+      ...state,
+      accessToken,
+    };
+  },
 };
 
 function defaultReducer(state) {
   return state;
 }
 
-export default function reducer(state = initialState, action) {
+export default function reducer(state = initialState, action = {}) {
   return (reducers[action.type] || defaultReducer)(state, action);
 }
