@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 
 import LoginPage from './LoginPage';
 
+jest.mock('react-redux');
+
 describe('LoginPage', () => {
   beforeEach(() => {
     useSelector.mockImplementation((selector) => selector({
