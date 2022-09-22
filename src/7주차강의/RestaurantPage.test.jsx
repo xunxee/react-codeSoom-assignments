@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -31,16 +31,10 @@ describe('RestaurantPage', () => {
   it('renders review write form', () => {
     const params = { id: '1' };
 
-    const { getByLabelText } = render((
+    const { queryByLabelText } = render((
       <RestaurantPage params={params} />
     ));
 
-    fireEvent.change(getByLabelText('평점'), {
-      target: { value: '5' },
-    });
-
-    fireEvent.change(getByLabelText('리뷰 내용'), {
-      target: { value: '정말 최고 :)' },
-    });
+    expect(queryByLabelText('평점')).not.toBeNull();
   });
 });
