@@ -30,7 +30,7 @@ describe('RestaurantContainer', () => {
     expect(container).toHaveTextContent('서울시');
   });
 
-  it('renders review write form', () => {
+  it('renders review write fields', () => {
     const { queryByLabelText } = render(
       <RestaurantContainer restaurantId="1" />,
     );
