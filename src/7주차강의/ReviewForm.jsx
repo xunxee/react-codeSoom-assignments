@@ -1,33 +1,25 @@
-export default function ReviewForm({ onChange }) {
-  function handleChange(event) {
-    const { target: { name, value } } = event;
-    onChange({ name, value });
-  }
+import TextField from './TextField';
 
+export default function ReviewForm({ onChange, onSubmit }) {
   return (
     <>
-      <div>
-        <label htmlFor="review-score">
-          평점
-        </label>
-        <input
-          type="number"
-          id="review-score"
-          name="score"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="review-description">
-          리뷰 내용
-        </label>
-        <input
-          type="text"
-          id="review-description"
-          name="description"
-          onChange={handleChange}
-        />
-      </div>
+      <TextField
+        label="평점"
+        name="score"
+        type="number"
+        onChange={onChange}
+      />
+      <TextField
+        label="리뷰 설명"
+        name="description"
+        onChange={onChange}
+      />
+      <button
+        type="button"
+        onClick={onSubmit}
+      >
+        리뷰 남기기
+      </button>
     </>
   );
 }

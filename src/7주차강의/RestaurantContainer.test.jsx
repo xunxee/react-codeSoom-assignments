@@ -36,7 +36,7 @@ describe('RestaurantContainer', () => {
     );
 
     expect(queryByLabelText('평점')).not.toBeNull();
-    expect(queryByLabelText('리뷰 내용')).not.toBeNull();
+    expect(queryByLabelText('리뷰 설명')).not.toBeNull();
   });
 
   it('listens change events', () => {
@@ -47,7 +47,7 @@ describe('RestaurantContainer', () => {
     const controls = [
       { label: '평점', name: 'score', value: '5' },
       {
-        label: '리뷰 내용',
+        label: '리뷰 설명',
         name: 'description',
         value: '정말 최고 :)',
       },
