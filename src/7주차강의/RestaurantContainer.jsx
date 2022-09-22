@@ -4,13 +4,19 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import {
   loadRestaurant,
+  changeReviewField,
 } from './actions';
 
 import { get } from './utils';
 
 import RestaurantDetail from './RestaurantDetail';
 
-function ReviewForm() {
+function ReviewForm({ onChange }) {
+  function handleChange(event) {
+    const { target: { name, value } } = event;
+    onChange({ name, value });
+  }
+
   return (
     <>
       <div>
@@ -20,6 +26,8 @@ function ReviewForm() {
         <input
           type="number"
           id="review-score"
+          name="score"
+          onChange={handleChange}
         />
       </div>
       <div>
@@ -29,6 +37,8 @@ function ReviewForm() {
         <input
           type="text"
           id="review-description"
+          name="description"
+          onChange={handleChange}
         />
       </div>
     </>
@@ -50,10 +60,14 @@ export default function RestaurantContainer({ restaurantId }) {
     );
   }
 
+  function handleChange({ name, value }) {
+    dispatch(changeReviewField({ name, value }));
+  }
+
   return (
     <>
       <RestaurantDetail restaurant={restaurant} />
-      <ReviewForm />
+      <ReviewForm onChange={handleChange} />
     </>
   );
 }
