@@ -18,6 +18,11 @@ describe('RestaurantContainer', () => {
         name: '마법사주방',
         address: '서울시 강남구',
       },
+      reviewFields: {
+        score: '',
+        description: '',
+      },
+      accessToken: given.accessToken,
     }));
   });
 
@@ -30,38 +35,64 @@ describe('RestaurantContainer', () => {
     expect(container).toHaveTextContent('서울시');
   });
 
-  it('renders review write fields', () => {
-    const { queryByLabelText } = render(
-      <RestaurantContainer restaurantId="1" />,
-    );
+  context('without logged-in', () => {
+    it('renders no review write field', () => {
+      const { queryByLabelText } = render(
+        <RestaurantContainer restaurantId="1" />,
+      );
 
-    expect(queryByLabelText('평점')).not.toBeNull();
-    expect(queryByLabelText('리뷰 설명')).not.toBeNull();
+      expect(queryByLabelText('평점')).toBeNull();
+      expect(queryByLabelText('리뷰 설명')).toBeNull();
+    });
   });
 
-  it('listens change events', () => {
-    const { getByLabelText } = render(
-      <RestaurantContainer restaurantId="1" />,
-    );
+  context('with logged-in', () => {
+    given('accessToken', () => 'ACCESS_TOKEN');
+    // TODO: accessToken seting
 
-    const controls = [
-      { label: '평점', name: 'score', value: '5' },
-      {
-        label: '리뷰 설명',
-        name: 'description',
-        value: '정말 최고 :)',
-      },
-    ];
+    it('renders review write fields', () => {
+      const { queryByLabelText } = render(
+        <RestaurantContainer restaurantId="1" />,
+      );
 
-    controls.forEach(({ label, name, value }) => {
-      fireEvent.change(getByLabelText(label), {
-        target: { value },
+      expect(queryByLabelText('평점')).not.toBeNull();
+      expect(queryByLabelText('리뷰 설명')).not.toBeNull();
+    });
+
+    it('listens change events', () => {
+      const { getByLabelText } = render(
+        <RestaurantContainer restaurantId="1" />,
+      );
+
+      const controls = [
+        { label: '평점', name: 'score', value: '5' },
+        {
+          label: '리뷰 설명',
+          name: 'description',
+          value: '정말 최고 :)',
+        },
+      ];
+
+      controls.forEach(({ label, name, value }) => {
+        fireEvent.change(getByLabelText(label), {
+          target: { value },
+        });
+
+        expect(dispatch).toBeCalledWith({
+          type: 'changeReviewField',
+          payload: { name, value },
+        });
       });
+    });
 
-      expect(dispatch).toBeCalledWith({
-        type: 'changeReviewField',
-        payload: { name, value },
-      });
+    it('renders "리뷰 남기기" button', () => {
+      const { getByText } = render(
+        <RestaurantContainer restaurantId="1" />,
+      );
+
+      fireEvent.click(getByText('리뷰 남기기'));
+
+      expect(dispatch).toBeCalledTimes(2); // 처음 useEffect 1번
     });
   });
 });

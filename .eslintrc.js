@@ -24,7 +24,8 @@ module.exports = {
     actor: 'readonly',
     Feature: 'readonly',
     Scenario: 'readonly',
-    context: 'readonly',
+    context: 'readonly', // context 사용시 설정
+    given: 'readonly', // given 사용시 설정
   },
   rules: {
     indent: ['error', 2],
