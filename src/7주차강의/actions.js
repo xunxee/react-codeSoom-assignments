@@ -7,6 +7,8 @@ import {
   postReview,
 } from './services/api';
 
+import { saveItem } from './services/storage';
+
 export function setRegions(regions) {
   return {
     type: 'setRegions',
@@ -104,8 +106,15 @@ export function setAccessToken(accessToken) {
 export function requestLogin() {
   return async (dispatch, getState) => {
     const { loginFields: { email, password } } = getState();
-    const accessToken = await postLogin({ email, password });
-    dispatch(setAccessToken(accessToken));
+    try {
+      const accessToken = await postLogin({ email, password });
+      // TODO: 로그인 성공하면 -> localStorage 에 저장
+      saveItem('accessToken', accessToken);
+
+      dispatch(setAccessToken(accessToken));
+    } catch (e) {
+      console.error(e);
+    }
   };
 }
 
