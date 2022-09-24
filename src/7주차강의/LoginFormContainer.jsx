@@ -13,7 +13,6 @@ import LogoutForm from './LogoutForm';
 
 export default function LoginFormContainer() {
   const dispatch = useDispatch();
-
   const { email, password } = useSelector(get('loginFields'));
   const accessToken = useSelector(get('accessToken'));
 
