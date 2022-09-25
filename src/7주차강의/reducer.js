@@ -4,7 +4,6 @@ const initialState = {
   regions: [],
   categories: [],
   restaurants: [],
-  reviews: [], // ?
   restaurant: null,
   selectedRegion: null,
   selectedCategory: null,
@@ -94,6 +93,18 @@ const reducers = {
       reviewFields: {
         ...state.reviewFields,
         [name]: value,
+      },
+    };
+  },
+
+  setReviews(state, { payload: { reviews } }) {
+    const { restaurant } = state;
+
+    return {
+      ...state,
+      restaurant: {
+        ...restaurant,
+        reviews,
       },
     };
   },
