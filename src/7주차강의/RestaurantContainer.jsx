@@ -12,7 +12,7 @@ import { get } from './utils';
 
 import RestaurantDetail from './RestaurantDetail';
 import ReviewForm from './ReviewForm';
-import ReviewList from './ReviewList';
+import Reviews from './Reviews';
 
 export default function RestaurantContainer({ restaurantId }) {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ export default function RestaurantContainer({ restaurantId }) {
 
   if (!restaurant) {
     return (
-      <p>Loading......?</p>
+      <p>Loading......</p>
     );
   }
 
@@ -35,21 +35,19 @@ export default function RestaurantContainer({ restaurantId }) {
   }
 
   function handleSubmit() {
-    dispatch(sendReview({ restaurantId, restaurant }));
+    dispatch(sendReview({ restaurantId }));
   }
 
   return (
     <>
       <RestaurantDetail restaurant={restaurant} />
       {accessToken ? (
-        <>
-          <ReviewForm
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-          />
-          <ReviewList restaurant={restaurant} />
-        </>
+        <ReviewForm
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+        />
       ) : null}
+      <Reviews reviews={restaurant.reviews} />
     </>
   );
 }

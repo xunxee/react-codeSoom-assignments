@@ -4,7 +4,7 @@ const initialState = {
   regions: [],
   categories: [],
   restaurants: [],
-  reviews: [],
+  reviews: [], // ?
   restaurant: null,
   selectedRegion: null,
   selectedCategory: null,
