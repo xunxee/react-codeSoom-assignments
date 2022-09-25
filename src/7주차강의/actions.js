@@ -131,6 +131,11 @@ export function changeReviewField({ name, value }) {
   };
 }
 
+export function loadReview({ restaurantId }) {
+  // TODO: fetch restaurant
+  // setReviews
+}
+
 export function sendReview({ restaurantId }) {
   return async (dispatch, getState) => {
     const {
@@ -140,5 +145,7 @@ export function sendReview({ restaurantId }) {
     await postReview({
       accessToken, restaurantId, score, description,
     });
+
+    dispatch(loadRestaurant({ restaurantId }));
   };
 }

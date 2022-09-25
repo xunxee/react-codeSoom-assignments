@@ -3,9 +3,11 @@ export default function Reviews({ reviews }) {
     return null;
   }
 
+  const sortedReviews = [...reviews].sort((a, b) => b.id - a.id);
+
   return (
     <div>
-      {reviews.map((review) => (
+      {sortedReviews.map((review) => (
         <div key={review.id}>
           {review.name}
           |
