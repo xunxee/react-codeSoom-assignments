@@ -81,7 +81,7 @@ export function loadRestaurants() {
 
 export function loadRestaurant({ restaurantId }) {
   return async (dispatch) => {
-    dispatch(setRestaurant(null));
+    dispatch(setRestaurant({ reviews: [] }));
 
     const restaurant = await fetchRestaurant({ restaurantId });
 
@@ -138,7 +138,7 @@ export function setReviews(reviews) {
   };
 }
 
-export function loadReview(restaurantId) {
+export function loadReview({ restaurantId }) {
   return async (dispatch) => {
     const restaurant = await fetchRestaurant({ restaurantId });
 
@@ -152,10 +152,18 @@ export function sendReview({ restaurantId }) {
       accessToken, reviewFields: { score, description },
     } = getState();
 
+    // 1. 먼저 지운다.
+
     await postReview({
       accessToken, restaurantId, score, description,
     });
 
-    dispatch(loadReview({ restaurantId }));
+    // 2. 완료가 되면 지운다.
+
+    await dispatch(loadReview({ restaurantId }));
+
+    // 3. 업데이트가 끝나면 지운다.
+    dispatch(changeReviewField({ name: 'score', value: '' }));
+    dispatch(changeReviewField({ name: 'description', value: '' }));
   };
 }

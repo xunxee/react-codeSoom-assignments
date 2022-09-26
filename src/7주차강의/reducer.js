@@ -4,7 +4,9 @@ const initialState = {
   regions: [],
   categories: [],
   restaurants: [],
-  restaurant: null,
+  restaurant: {
+    reviews: [],
+  },
   selectedRegion: null,
   selectedCategory: null,
   loginFields: {
@@ -43,7 +45,10 @@ const reducers = {
   setRestaurant(state, { payload: { restaurant } }) {
     return {
       ...state,
-      restaurant,
+      restaurant: {
+        ...restaurant,
+        reviews: [...restaurant.reviews].sort((a, b) => b.id - a.id),
+      },
     };
   },
 
@@ -104,7 +109,7 @@ const reducers = {
       ...state,
       restaurant: {
         ...restaurant,
-        reviews,
+        reviews: [...reviews].sort((a, b) => b.id - a.id),
       },
     };
   },

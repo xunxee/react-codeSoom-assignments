@@ -72,10 +72,12 @@ describe('reducer', () => {
   describe('setRestaurant', () => {
     it('changes restaurant', () => {
       const initialState = {
-        restaurant: null,
+        restaurant: {
+          reviews: [],
+        },
       };
 
-      const restaurant = { id: 1, name: '마법사주방' };
+      const restaurant = { id: 1, name: '마법사주방', reviews: [] };
 
       const state = reducer(initialState, setRestaurant(restaurant));
 

@@ -3,16 +3,21 @@ export default function Reviews({ reviews }) {
     return null;
   }
 
-  const sortedReviews = [...reviews].sort((a, b) => b.id - a.id);
-
   return (
     <div>
-      {sortedReviews.map((review) => (
-        <div key={review.id}>
-          {review.name}
-          |
-          {review.description}
-        </div>
+      {reviews.map((review) => (
+        <li key={review.id}>
+          <div>
+            {review.name}
+          </div>
+          <div>
+            {review.score}
+            점
+          </div>
+          <div>
+            {review.description}
+          </div>
+        </li>
       ))}
     </div>
   );
