@@ -11,6 +11,7 @@ import {
   setAccessToken,
   logout,
   changeReviewField,
+  clearReviewFields,
   setReviews,
 } from './actions';
 
@@ -209,6 +210,22 @@ describe('reducer', () => {
       );
 
       expect(state.reviewFields.score).toBe('5');
+    });
+  });
+
+  describe('clearReviewFields', () => {
+    it('clears field of review', () => {
+      const initialState = {
+        reviewFields: {
+          score: 5,
+          description: '맛있어요',
+        },
+      };
+
+      const state = reducer(initialState, clearReviewFields());
+
+      expect(state.reviewFields.score).toBe('');
+      expect(state.reviewFields.score).toBe('');
     });
   });
 

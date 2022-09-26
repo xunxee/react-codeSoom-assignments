@@ -131,6 +131,12 @@ export function changeReviewField({ name, value }) {
   };
 }
 
+export function clearReviewFields() {
+  return {
+    type: 'clearReviewFields',
+  };
+}
+
 export function setReviews(reviews) {
   return {
     type: 'setReviews',
@@ -161,9 +167,8 @@ export function sendReview({ restaurantId }) {
     // 2. 완료가 되면 지운다.
 
     await dispatch(loadReview({ restaurantId }));
+    dispatch(clearReviewFields());
 
     // 3. 업데이트가 끝나면 지운다.
-    dispatch(changeReviewField({ name: 'score', value: '' }));
-    dispatch(changeReviewField({ name: 'description', value: '' }));
   };
 }

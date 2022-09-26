@@ -102,6 +102,16 @@ const reducers = {
     };
   },
 
+  clearReviewFields(state) {
+    return {
+      ...state,
+      reviewFields: {
+        score: '',
+        description: '',
+      },
+    };
+  },
+
   setReviews(state, { payload: { reviews } }) {
     const { restaurant } = state;
 
