@@ -81,7 +81,7 @@ export function loadRestaurants() {
 
 export function loadRestaurant({ restaurantId }) {
   return async (dispatch) => {
-    dispatch(setRestaurant(null));
+    dispatch(setRestaurant({ reviews: [] }));
 
     const restaurant = await fetchRestaurant({ restaurantId });
 
@@ -131,15 +131,44 @@ export function changeReviewField({ name, value }) {
   };
 }
 
+export function clearReviewFields() {
+  return {
+    type: 'clearReviewFields',
+  };
+}
+
+export function setReviews(reviews) {
+  return {
+    type: 'setReviews',
+    payload: { reviews },
+  };
+}
+
+export function loadReview({ restaurantId }) {
+  return async (dispatch) => {
+    const restaurant = await fetchRestaurant({ restaurantId });
+
+    dispatch(setReviews(restaurant.reviews));
+  };
+}
+
 export function sendReview({ restaurantId }) {
   return async (dispatch, getState) => {
     const {
       accessToken, reviewFields: { score, description },
     } = getState();
 
+    // 1. 먼저 지운다.
+
     await postReview({
       accessToken, restaurantId, score, description,
     });
-    await dispatch(loadRestaurant({ restaurantId }));
+
+    // 2. 완료가 되면 지운다.
+
+    await dispatch(loadReview({ restaurantId }));
+    dispatch(clearReviewFields());
+
+    // 3. 업데이트가 끝나면 지운다.
   };
 }

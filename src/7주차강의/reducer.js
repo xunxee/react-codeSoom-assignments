@@ -1,11 +1,17 @@
 import { equal } from './utils';
 
+const initialReviewFields = {
+  score: '',
+  description: '',
+};
+
 const initialState = {
   regions: [],
   categories: [],
   restaurants: [],
-  reviews: [],
-  restaurant: null,
+  restaurant: {
+    reviews: [],
+  },
   selectedRegion: null,
   selectedCategory: null,
   loginFields: {
@@ -14,8 +20,7 @@ const initialState = {
   },
   accessToken: '',
   reviewFields: {
-    score: '',
-    description: '',
+    ...initialReviewFields,
   },
 };
 
@@ -44,7 +49,10 @@ const reducers = {
   setRestaurant(state, { payload: { restaurant } }) {
     return {
       ...state,
-      restaurant,
+      restaurant: {
+        ...restaurant,
+        reviews: [...restaurant.reviews].sort((a, b) => b.id - a.id),
+      },
     };
   },
 
@@ -94,6 +102,27 @@ const reducers = {
       reviewFields: {
         ...state.reviewFields,
         [name]: value,
+      },
+    };
+  },
+
+  clearReviewFields(state) {
+    return {
+      ...state,
+      reviewFields: {
+        ...initialReviewFields,
+      },
+    };
+  },
+
+  setReviews(state, { payload: { reviews } }) {
+    const { restaurant } = state;
+
+    return {
+      ...state,
+      restaurant: {
+        ...restaurant,
+        reviews: [...reviews].sort((a, b) => b.id - a.id),
       },
     };
   },
