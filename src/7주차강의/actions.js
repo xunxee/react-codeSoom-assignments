@@ -84,7 +84,7 @@ export function loadRestaurant({ restaurantId }) {
     dispatch(setRestaurant({ reviews: [] }));
 
     const restaurant = await fetchRestaurant({ restaurantId });
-
+    console.log(restaurant);
     dispatch(setRestaurant(restaurant));
   };
 }
