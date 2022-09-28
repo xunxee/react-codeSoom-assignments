@@ -15,7 +15,7 @@ import RestaurantsPage from './RestaurantsPage';
 import RestaurantPage from './RestaurantPage';
 import LoginPage from './LoginPage';
 
-import { setAccessToken } from './actions';
+import { setAccessToken } from './slice';
 
 import { loadItem } from './services/storage';
 

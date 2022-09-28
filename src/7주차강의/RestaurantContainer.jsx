@@ -6,7 +6,7 @@ import {
   loadRestaurant,
   changeReviewField,
   sendReview,
-} from './actions';
+} from './slice';
 
 import { get } from './utils';
 
