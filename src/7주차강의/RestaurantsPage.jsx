@@ -31,7 +31,9 @@ export default function RestaurantsPage() {
     <div>
       <RegionsContainer />
       <CategoriesContainer />
-      <RestaurantsContainer onClickRestaurant={handleClickRestaurants} />
+      <RestaurantsContainer
+        onClickRestaurant={handleClickRestaurants}
+      />
     </div>
   );
 }
