@@ -10,7 +10,7 @@ import RestaurantsContainer from './RestaurantsContainer';
 
 import {
   loadInitialData,
-} from './actions';
+} from './slice';
 
 export default function RestaurantsPage() {
   const navigate = useNavigate();
@@ -31,7 +31,9 @@ export default function RestaurantsPage() {
     <div>
       <RegionsContainer />
       <CategoriesContainer />
-      <RestaurantsContainer onClickRestaurant={handleClickRestaurants} />
+      <RestaurantsContainer
+        onClickRestaurant={handleClickRestaurants}
+      />
     </div>
   );
 }
