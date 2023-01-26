@@ -6,11 +6,10 @@ import {
 
 import { Provider } from 'react-redux';
 
-import App from './7주차강의/App';
-
 // import App from './2주차/assignment1(creatingCounterApp)/App';
 // import App from './2주차/assignment2(creatingTodoApp)/App';
 // import App from './4주차강의/App';
+import App from './7주차강의/App';
 // import store from './4주차강의/store';
 // import store from './4주차과제2/store';
 // import store from './5주차과제1/store';
@@ -26,3 +25,10 @@ app.render(
     </BrowserRouter>
   </Provider>,
 );
+
+// import { createRoot } from 'react-dom/client';
+
+// import App from './1주차/App(과제1)';
+
+// const add = createRoot(document.getElementById('app'));
+// add.render(<App />);
