@@ -61,7 +61,7 @@ describe('RestaurantContainer', () => {
 
   context('with logged-in', () => {
     given('accessToken', () => 'ACCESS_TOKEN');
-    // TODO: accessToken seting
+    // TODO: accessToken setting
 
     it('renders review write fields', () => {
       const { queryByLabelText } = render(
