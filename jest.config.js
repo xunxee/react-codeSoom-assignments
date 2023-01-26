@@ -1,6 +1,6 @@
 module.exports = {
   setupFilesAfterEnv: [
-    'given2/setup',
+    'given2/setup', // given2 세팅
     'jest-plugin-context/setup',
     './jest.setup',
   ],
