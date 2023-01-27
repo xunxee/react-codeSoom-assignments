@@ -4,7 +4,9 @@
 
 ## 1. 배운 것
 
-✏️ **1주차: JSX?**
+✏️ **1주 차: JSX?**
+
+- [CodeSoom 1주 차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A81%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
 - 프론트엔드 개발 환경 구축
 
@@ -14,9 +16,10 @@
 
   <img src="https://user-images.githubusercontent.com/14071105/83361577-0cfccb80-a3c5-11ea-8313-8b9aaf2de4e5.gif" width ="40%">
 
-- [CodeSoom 1주차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A81%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
-✏️ **2주차: React의 관심사 분리**
+✏️ **2주 차: React의 관심사 분리**
+
+- [CodeSoom 2주 차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A82%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
 - 관심사와 컴포넌트의 분리
 
@@ -24,9 +27,10 @@
 
   <img src="https://user-images.githubusercontent.com/14071105/83856356-5e55e380-a754-11ea-8330-ae466addda9e.gif" width="40%">
 
-- [CodeSoom 2주차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A82%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
-✏️ **3주차: 테스트 & TDD**
+✏️ **3주 차: 테스트 & TDD**
+
+- [CodeSoom 3주 차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A83%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
 - 테스트와 TDD에 대해 알아보고, 테스트 코드 작성하기
   
@@ -34,9 +38,10 @@
 
   <img src="https://user-images.githubusercontent.com/47380072/85221643-64a0bc80-b3f0-11ea-850e-c45abc780eab.png" width="40%">
 
-- [CodeSoom 3주차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A83%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
-✏️ **4주차: Flux Architecture & Redux**
+✏️ **4주 차: Flux Architecture & Redux**
+
+- [CodeSoom 4주 차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A84%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
 - Redux를 이해하고, 이를 사용하여 전역 상태 관리하기
 
@@ -46,10 +51,9 @@
 
   <img src="https://user-images.githubusercontent.com/14071105/85217284-f8ab5d80-b3c9-11ea-8d8b-c90103316bff.gif" width="40%">
 
+✏️ **5주 차: 비동기 처리**
 
-- [CodeSoom 4주차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A84%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
-
-✏️ **5주차: 비동기 처리**
+- [CodeSoom 5주 차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A84%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
 - 비동기 처리에 대해서 공부하고, Redux의 비동기 처리를 이해하기
 
@@ -57,7 +61,9 @@
 
   <img src="https://user-images.githubusercontent.com/14071105/85921684-d6797a00-b8b8-11ea-8fc4-5dd0f539bb5b.gif" width="40%">
 
-✏️ **6주차: 라우팅**
+✏️ **6주 차: 라우팅**
+
+- [CodeSoom 6주 차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A86%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
 - React에서 여러 웹 페이지를 다루는 방법
 
@@ -67,7 +73,9 @@
 
   <img src="https://user-images.githubusercontent.com/14071105/86525302-4d69d080-bec0-11ea-825b-18174b9c65bb.gif" width="40%">
 
-✏️ **7주차: 로그인**
+✏️ **7주 차: 로그인**
+
+- [CodeSoom 7주 차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A87%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
 - React에서 로그인을 다루는 방법
 
@@ -75,7 +83,9 @@
 
   <img src="https://user-images.githubusercontent.com/14071105/87226953-4c5e0500-c3d2-11ea-9054-4b66bfe74e80.gif" width="40%">
 
-✏️ **8주차: Emotion**
+✏️ **8주 차: Emotion**
+
+- [CodeSoom 8주 차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A88%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
 - Emotion을 사용한 CSS in JS 공부하기
 
