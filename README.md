@@ -2,6 +2,8 @@
 
 올바른 테스트 코드 작성과 좋은 개발자가 되기 위한 훈련으로 리액트 과정을 수료했습니다.
 
+- [CodeSoom 리액트 과정 최종 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A8_%EC%B5%9C%EC%A2%85%ED%9A%8C%EA%B3%A0/)
+
 ## 1. 배운 것
 
 ✏️ **1주 차: JSX?**
@@ -53,7 +55,7 @@
 
 ✏️ **5주 차: 비동기 처리**
 
-- [CodeSoom 5주 차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A84%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
+- [CodeSoom 5주 차 회고](https://xunxee.github.io/memoir/%EC%BD%94%EB%93%9C%EC%88%A85%EC%A3%BC%EC%B0%A8%ED%9A%8C%EA%B3%A0/)
 
 - 비동기 처리에 대해서 공부하고, Redux의 비동기 처리를 이해하기
 
